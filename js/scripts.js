@@ -1,13 +1,12 @@
-// // Business Logci
-
-function roll(){
-	return Math.floor(Math.random() * 6) + 1;
-}
-
+// Business Logic
 function Game(){
 	this.score = 0;
   this.totalScore = 0;
   this.dice = 0;
+}
+
+function roll(){
+	return Math.floor(Math.random() * 6) + 1;
 }
 
 Game.prototype.play = function(){
@@ -45,6 +44,7 @@ $(document).ready(function(){
     playerOne.play();
     $(".roll-two").attr("disabled", "disabled");
     $(".hold-two").attr("disabled", "disabled");
+    nextPlayer();
   });
   $('.roll-two').click(function(e){
     playerTwo.dice = roll();
@@ -53,6 +53,7 @@ $(document).ready(function(){
     playerTwo.play();
     $(".roll-one").attr("disabled");
     $(".hold-one").attr("disabled");
+    nextPlayer();
   });
   $('.hold-one').click(function(e){
     e.preventDefault();
@@ -88,4 +89,19 @@ $(document).ready(function(){
     $(".roll-two").removeAttr("disabled");
     $(".hold-two").removeAttr("disabled");
   });
+  var nextPlayer = function(){
+    if(playerOne.dice === 1){
+      $(".roll-one").attr("disabled", "disabled");
+      $(".hold-one").attr("disabled", "disabled");
+      $(".roll-two").removeAttr("disabled");
+      $(".hold-two").removeAttr("disabled");
+      alert('Sorry you rolled a 1! its the next players turn')
+    } else{
+      $(".roll-two").attr("disabled", "disabled");
+      $(".hold-two").attr("disabled", "disabled");
+      $(".roll-one").removeAttr("disabled");
+      $(".hold-one").removeAttr("disabled");
+      // alert('Sorry you rolled a 1! its the next players turn')
+    }
+  };
 });
