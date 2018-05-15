@@ -9,6 +9,77 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+
+  <div class="container">
+    <h1>Pig Dice Game</h1>
+    <div class="row">
+      <div class="col-md-4 player-one">
+        <h2>Player One</h2>
+        <h4>
+          Dice Value: 
+          <span id="dice-one"></span>
+        </h4>
+        <h4>
+          Score:
+          <span id="score-one"></span>
+        </h4>
+        <h4>
+          Total Score:
+          <span id="total-score-one"></span>
+        </h4>
+        <div class="my-buttons">
+          <button type="submit" class="roll-one btn btn-lg btn-primary">
+              ROLL
+            </button>
+            <button type="submit" class="hold-one btn btn-lg btn-danger">
+              HOLD
+          </button>
+        </div>
+      </div>
+      <div class="col-md-4 player-two">
+        <h2>Player Two</h2>
+        <h4>
+          Dice Value: 
+          <span id="dice-two"></span>
+        </h4>
+        <h4>
+           Score:
+          <span id="score-two"></span>
+        </h4>
+        <h4>
+          Total Score:
+          <span id="total-score-two"></span>
+        </h4>
+        <div class="my-buttons">
+          <button type="submit" class="roll-two btn btn-lg btn-primary">
+              ROLL
+            </button>
+            <button type="submit" class="hold-two btn btn-lg btn-danger">
+              HOLD
+          </button>
+        </div>
+      </div>
+      <div class="col-md-4 game-rules">
+        <h3>Game Rules:</h3>
+        <ul>
+          <li>The game has 2 players, playing in rounds</li>
+          <li>In each turn, a player rolls a dice as many times as he whishes. Each result get added to his ROUND score</li>
+          <li> BUT, if the player rolls a 1, all his ROUND score gets lost. After that, it's the next player's turn</li>
+          <li>The player can choose to 'Hold', which means that his ROUND score gets added to his GLBAL score. After that, it's the next player's turn</li>
+          <li>The first player to reach 100 points on GLOBAL score wins the game</li>    
+        </ul>
+        <button class="new-game btn">New Game</button>
+      </div>
+      <div class="row my-buttons disabled">
+        <button type="submit" class="roll btn btn-lg btn-primary">
+            ROLL
+          </button>
+          <button type="submit" class="hold btn btn-lg btn-danger">
+            HOLD
+        </button>
+      </div>
+    </div>
+  </div>
   
   <script src="js/jquery-3.3.1.js"></script>
   <script src="js/scripts.js"></script>
