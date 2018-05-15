@@ -1,0 +1,16 @@
+.player-one,
+.player-two {
+  border: 1px solid #ddd;
+  padding: 9%;
+  margin-top: 2%;
+}
+h3{
+  text-align: center;
+}
+.my-buttons {
+  margin-top: 33%;
+  margin-left: 27%;
+}
+.disabled {
+  display: none;
+}
